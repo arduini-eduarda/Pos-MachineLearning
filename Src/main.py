@@ -13,8 +13,8 @@ from nltk.corpus import stopwords
 
 # from wordcloud import WordCloud
 
-from Src.Order.Items import findOrder
-from Src.DataProcessing.TfIdf import tfIdf
+from Order.Items import findOrder
+from DataProcessing.TfIdf import tfIdf
 
 accuracy = []
 loss = []
