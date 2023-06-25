@@ -51,13 +51,13 @@ def createData():
 
     jsonChatBot = ""
 
-    f = open("Data/intents.json", "r")
+    f = open("DataProcessing/intents.json", "r")
     jsonChatBot = f.read()
     f.close()
 
     text = jsonChatBot.replace("{categories}", categories)
 
-    new_file = open("Data/intents_new.json", "a")
+    new_file = open("DataProcessing/intents_new.json", "a")
     new_file.write(text)
     new_file.close()
 

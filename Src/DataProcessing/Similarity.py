@@ -16,6 +16,4 @@ def my_autocorrect():
 
         print("Similarity:", token1.similarity(token2))
 
-if __name__ == "__main__":
-    my_autocorrect()
 

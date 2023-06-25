@@ -1,9 +1,8 @@
 import spacy.cli
-
 from spacy.matcher import Matcher
 
-def findOrder(text):
 
+def findOrder(text):
     nlp = spacy.load("pt_core_news_sm")
 
     matcher = Matcher(nlp.vocab)
@@ -19,6 +18,3 @@ def findOrder(text):
     matches = matcher(doc)
     spans = [doc[start:end] for _, start, end in matches]
     print(spacy.util.filter_spans(spans))
-
-    # for token in doc:
-    #     print(f'{token.text:{8}} {token.pos_:{6}} {token.tag_:{6}} {token.dep_:{6}} {spacy.explain(token.pos_):{20}} {spacy.explain(token.tag_)}')
