@@ -11,7 +11,7 @@ import random
 from nltk.corpus import stopwords
 # nltk.download('stopwords')
 
-from wordcloud import WordCloud
+# from wordcloud import WordCloud
 
 from Src.Order.Items import findOrder
 from Src.DataProcessing.TfIdf import tfIdf
