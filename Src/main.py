@@ -13,6 +13,7 @@ from nltk.corpus import stopwords
 
 # from wordcloud import WordCloud
 
+nltk.download('punkt')
 from Order.Items import findOrder
 from DataProcessing.TfIdf import tfIdf
 
