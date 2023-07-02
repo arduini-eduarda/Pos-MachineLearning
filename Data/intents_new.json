@@ -1,0 +1,106 @@
+
+{"intents": [
+  {
+    "tag": "seeMenu",
+        "patterns": [
+          "Gostaria de ver o menu",
+          "Quero conhecer o cardápio",
+          "Quero saber o cardápio",
+          "Pode me falar o cardápio",
+          "Me fale sobre o menu",
+          "Fale-me sobre o cardápio"
+        ],
+        "responses": [
+          "Claro temos os seguintes itens:  , Lanche , Bebida. Qual quer ouvir?",
+          "O menu tem as seguintes opções:  , Lanche , Bebida. Qual prefere?"
+        ],
+        "context": [
+          ""
+        ]
+      },
+  {
+    "tag": "drink",
+        "patterns": [
+          "Quais as bebidas?",
+          "Quero saber quais bebidas vocês tem",
+          "Eu quero saber que tipo de bebida você tem",
+          "Quero algo para beber",
+          "Eu quero saber que tipo de bebida você vende",
+          "O que tem para beber?"
+        ],
+        "responses": [
+          "Claro temos refrigerante, suco e água",
+          "As opções são refrigerante, suco e água",
+          "Vendemos refrigerante, suco e água",
+          "Pode escolher entre refrigerante, suco e água"
+        ],
+        "context": [
+          ""
+        ]
+      },
+   {
+    "tag": "pedido",
+        "patterns": [
+          "Quero pedir",
+          "Quero fazer o pedido",
+          "Já conheco quero pedir",
+          "Eu já sei o que quero pedir"
+        ],
+        "responses": ["O que vai ser?",
+          "Qual o pedido?",
+           "Claro, sem problemas. O que vai querer?",
+           "O que vai querer?"],
+        "context": [
+          ""
+        ]
+      },
+
+        {"tag": "menu",
+         "patterns": ["Eu gostaria de um refrigerante por favor.",
+           "Eu gostaria de uma bebida, por favor.",
+           "vai ser um suco",
+           "quero uma água",
+           "uma água por favor",
+           "Ótimo, vou querer uma água"
+           ],
+         "responses": ["Algo mais?",
+           "Claro, sem problemas. O que mais?",
+           "Quer acrescentar algum item?"],
+         "context": [""]
+        },
+
+  {"tag": "add",
+         "patterns": [  "Sim, quero também um lanche",
+           "Quero trocar o sundae",
+           "posso trocar o refrigerante por uma água?",
+           "Sem alface por favor",
+           "Vou querer mais um lanche",
+           "Vou querer adicionar maionese",
+           "Pode retirar o queijo?"
+         ],
+         "responses": ["Algo mais?",
+           "Claro, sem problemas. O que mais?",
+           "Quer acrescentar mais alguma coisa?"],
+         "context": [""]
+        },
+  {"tag": "no_adicional",
+         "patterns": [
+           "Só isso mesmo",
+           "só isso",
+           "Será só isso",
+         "Não obrigada"],
+         "responses": ["Ok são {valor} reais",
+           "Certo serão {valor} reais",
+           "Ficou {valor} reais",
+           "O total é {valor} reais"],
+         "context": [""]
+        },
+   {"tag": "final",
+         "patterns": ["Obrigada",
+           "Agradeço"],
+         "responses": ["Obrigada",
+           "Eu que agradeço"],
+         "context": [""]
+        }
+    ]
+ }

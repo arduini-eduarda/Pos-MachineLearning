@@ -1,0 +1,40 @@
+
+{"intents": [
+  {
+    "tag": "seeMenu",
+        "patterns": [
+          "Eu quero que me fale sobre o cardapio"
+        ]
+      },
+  {
+    "tag": "drink",
+        "patterns": [
+          "O que você tem para beber?"
+        ]
+      },
+   {
+    "tag": "pedido",
+        "patterns": [
+          "Vou querer pedir"
+        ]
+      },
+
+        {"tag": "menu",
+         "patterns": ["Vou querer um refrigerante por favor."
+           ]
+        },
+
+  {"tag": "add",
+         "patterns": [
+           "Quero adicionar o sundae"
+         ]
+        },
+  {"tag": "no_adicional",
+         "patterns": [
+           "Só vou querer isso"]
+        },
+   {"tag": "final",
+         "patterns": ["Obrigada"]
+        }
+    ]
+ }

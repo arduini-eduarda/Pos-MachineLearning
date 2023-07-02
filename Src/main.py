@@ -51,7 +51,7 @@ def bag_of_words(s, words):
 
 def chat():
     # Loading intents.json
-    with open('./../Data/intents.json') as intents:
+    with open('Data/intents.json') as intents:
         data = json.load(intents)
 
     stemmer = SnowballStemmer("portuguese")
