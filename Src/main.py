@@ -141,7 +141,7 @@ def chat():
     # used to generate model graphic
     # saveModelData()
 
-    model.save('model.tflearn')
+    # model.save('model.tflearn')
 
     print("The bot is ready to talk!!(Type 'quit' to exit)")
     print("Bot: Olá, gostaria de conhecer nosso menu ou já quer fazer o pedido?")
