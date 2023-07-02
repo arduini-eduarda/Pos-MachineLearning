@@ -126,8 +126,8 @@ def chat():
         training = np.array(training)
         output = np.array(output)
 
-    with open('data.pickle', 'wb') as f:
-        pickle.dump((words, labels, training, output), f)
+        with open('data.pickle', 'wb') as f:
+            pickle.dump((words, labels, training, output), f)
 
     model = cnn_net(output, training)
 
