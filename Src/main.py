@@ -56,7 +56,7 @@ def chat():
 
     stemmer = SnowballStemmer("portuguese")
 
-    print("teste:" + os.path.isfile('data.pickle'))
+    print("teste:" + str(os.path.isfile('data.pickle')))
 
     if os.path.isfile('data.pickle'):
         with open('data.pickle', 'rb') as f:
