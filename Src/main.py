@@ -9,9 +9,7 @@ import matplotlib.pyplot as plt
 import random
 
 from nltk.corpus import stopwords
-# nltk.download('stopwords')
-
-# from wordcloud import WordCloud
+nltk.download('stopwords')
 
 nltk.download('punkt')
 from Order.Items import findOrder
