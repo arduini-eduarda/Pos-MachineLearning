@@ -56,6 +56,8 @@ def chat():
 
     stemmer = SnowballStemmer("portuguese")
 
+    print("teste:" + os.path.isfile('data.pickle'))
+
     if os.path.isfile('data.pickle'):
         with open('data.pickle', 'rb') as f:
             words, labels, training, output = pickle.load(f)
