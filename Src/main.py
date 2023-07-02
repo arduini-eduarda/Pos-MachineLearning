@@ -58,8 +58,8 @@ def chat():
 
     print("teste:" + str(os.path.isfile('data.pickle')))
 
-    if os.path.isfile('data.pickle'):
-        with open('data.pickle', 'rb') as f:
+    if os.path.isfile('../data.pickle'):
+        with open('../data.pickle', 'rb') as f:
             words, labels, training, output = pickle.load(f)
     else:
         # Fetching and Feeding information--
@@ -128,13 +128,13 @@ def chat():
         training = np.array(training)
         output = np.array(output)
 
-        with open('data.pickle', 'wb') as f:
+        with open('../data.pickle', 'wb') as f:
             pickle.dump((words, labels, training, output), f)
 
     model = cnn_net(output, training)
 
-    if os.path.isfile('model.tflearn'):
-        model.load("model.tflearn")
+    if os.path.isfile('../model.tflearn'):
+        model.load("../model.tflearn")
     else:
         model.fit(training, output, n_epoch=100, batch_size=6, show_metric=True, callbacks=monitorCallback)
 
