@@ -5,6 +5,7 @@ import tflearn
 import json
 import pickle
 import re
+import os
 import matplotlib.pyplot as plt
 import random
 
@@ -13,7 +14,7 @@ nltk.download('stopwords')
 
 nltk.download('punkt')
 from Order.Items import findOrder
-from DataProcessing.TfIdf import tfIdf
+# from DataProcessing.TfIdf import tfIdf
 
 accuracy = []
 loss = []
@@ -55,17 +56,18 @@ def chat():
 
     stemmer = SnowballStemmer("portuguese")
 
-    try:
+    if os.path.isfile('data.pickle'):
         with open('data.pickle', 'rb') as f:
             words, labels, training, output = pickle.load(f)
-    except:
+    else:
         # Fetching and Feeding information--
         words = []
         labels = []
         x_docs = []
         y_docs = []
 
-        tfIdf(data['intents'])
+        # used to generate tfidf from words
+        # tfIdf(data['intents'])
 
         for intent in data['intents']:
             words_to_cloud = []
@@ -94,11 +96,6 @@ def chat():
                 if intent['tag'] not in labels:
                     labels.append(intent['tag'])
 
-            # all_worlds = " ".join(s for s in words_to_cloud)
-            # wordcloud = WordCloud(background_color="black", max_words=5,
-            #                       width=1600, height=800).generate(all_worlds)
-            #
-            # wordcloud.to_file("wordcloud_{}.png".format(intent['tag']))
 
         words = [stemmer.stem(w) for w in words if w not in "?"]
         words = sorted(list(set(words)))
@@ -134,12 +131,13 @@ def chat():
 
     model = cnn_net(output, training)
 
-    # try:
-    #     model.load("model.tflearn")
-    # except:
-    model.fit(training, output, n_epoch=100, batch_size=6, show_metric=True, callbacks=monitorCallback)
+    if os.path.isfile('model.tflearn'):
+        model.load("model.tflearn")
+    else:
+        model.fit(training, output, n_epoch=100, batch_size=6, show_metric=True, callbacks=monitorCallback)
 
-    saveModelData()
+    # used to generate model graphic
+    # saveModelData()
 
     model.save('model.tflearn')
 
