@@ -1,99 +1,65 @@
 {
   "intents": [
-    {
-      "tag": "seeMenu",
-      "patterns": [
-        "Gostaria de ver o menu",
-        "Quero conhecer o cardápio",
-        "Vou querer saber o cardápio",
-        "Pode me falar o cardápio",
-        "Me fale sobre o menu",
-        "Fale-me sobre o cardápio"
-      ],
-      "responses": [
-        "Claro temos os seguintes itens: {categories}. Qual quer ouvir?",
-        "O menu tem as seguintes opções: {categories}. Qual prefere?"
-      ],
-      "context": [
-        ""
-      ]
-    },
 
-    {
-      "tag": "startOrder",
-      "patterns": [
-        "Quero pedir",
-        "Posso fazer o pedido",
-        "Já conheco quero pedir",
-        "Eu já sei o que quero pedir",
-        "Eu vou querer pedir",
-        "Quero iniciar o pedido"
-      ],
-      "responses": [
-        "O que vai ser?",
-        "Qual o pedido?",
-        "Claro, sem problemas. O que vai querer?",
-        "O que vai querer?"
-      ],
-      "context": [
-        ""
-      ]
-    },
     {
       "tag": "order",
       "patterns": [
-        "Eu gostaria de {qty} {product} porfavor.",
+        "Eu gostaria de {qty} {product} por favor.",
         "Vai ser o {product}",
         "Quero {qty} {product}",
-        "{qty} {product}, porfavor",
+        "{qty} {product}, por favor",
         "Vou querer {qty} {product}",
         "Ótimo, vou querer {qty} {product}"
+
       ],
       "responses": [
         "Algo mais?",
         "Claro, sem problemas. O que mais?",
         "Quer acrescentar algum item?"
       ],
-      "context": [
-        ""
+       "previous": [
       ]
     },
     {
       "tag": "add",
       "patterns": [
-        "Sim, quero também qty add",
-        "Vou querer adicionar add",
-        "Dá para adicionar add?",
-        "Pode por add?",
-        "Quero colocar add",
-        "Quero incluir add",
-        "Mais qty add"
+        "Sim, quero também {qty} {add}",
+        "Vou querer adicionar {add}",
+        "Dá para adicionar {add}?",
+        "Pode por {add}?",
+        "Quero colocar {add}",
+        "Quero incluir {add}",
+        "Mais {qty} {add}"
       ],
       "responses": [
         "Algo mais?",
         "Claro, sem problemas. O que mais?",
         "Quer acrescentar mais alguma coisa?"
       ],
-      "context": [
-        ""
+      "previous": [
+        "order",
+        "remove",
+        "add"
       ]
     },
     {
       "tag": "remove",
       "patterns": [
-        "Quero remover o add",
-        "Sem add por favor",
-        "Vou retirar o add",
-        "Pode retirar o add?",
-        "Vou querer sem add"
+        "Quero remover {qty} {add}",
+        "Sem {add} por favor",
+        "Vou retirar {qty} {add}",
+        "Pode retirar {qty} {add}?",
+        "Vou querer sem {add}"
       ],
       "responses": [
         "Algo mais?",
         "Claro, sem problemas. O que mais?",
-        "Quer acrescentar mais alguma coisa?"
+        "OK, quer acrescentar mais alguma coisa?"
       ],
-      "context": [
-        ""
+      "previous": [
+        "order",
+        "add",
+        "remove"
       ]
     },
     {
@@ -112,6 +78,11 @@
         "Ficou {valor} reais",
         "O total é {valor} reais",
         "Vai ser {valor} reais"
+      ],
+       "previous": [
+        "order",
+        "add",
+        "remove"
       ]
     },
     {
@@ -125,6 +96,9 @@
       "responses": [
         "Obrigada",
         "Eu que agradeço"
+      ],
+       "previous": [
+        "no_adicional"
       ]
     }
   ]

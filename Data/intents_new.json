@@ -104,3 +104,45 @@
         }
     ]
  }
+
+
+
+
+    {
+      "tag": "seeMenu",
+      "patterns": [
+        "Gostaria de saber o 'prato do dia",
+        "Quero conhecer o prato do dia",
+        "Vou querer saber o especial do dia",
+        "Pode me falar o especial de hoje",
+        "Me fale sobre o prato de hoje",
+        "Fale-me sobre o especial do dia"
+      ],
+      "responses": [
+        "Claro o especial é o {special}. Você vai querer?",
+        "O nosso especial é {special}. Gostaria de pedir?"
+      ],
+      "previous": [
+        ""
+      ]
+    },
+    {
+      "tag": "startOrder",
+      "patterns": [
+        "Quero pedir",
+        "Posso fazer o pedido",
+        "Já conheco quero pedir",
+        "Eu já sei o que quero pedir",
+        "Eu vou querer pedir",
+        "Quero iniciar o pedido"
+      ],
+      "responses": [
+        "O que vai ser?",
+        "Qual o pedido?",
+        "Claro, sem problemas. O que vai querer?",
+        "O que vai querer?"
+      ],
+       "previous": [
+        ""
+      ]
+    },
